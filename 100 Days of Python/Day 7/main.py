@@ -17,19 +17,20 @@ for i in range(len(word)):
 print(''.join(map(str, game_word)))  # shows user the length of the word without showing the word
 
 while True:
-
-    user_guess = pyip.inputStr("Guess a letter: ")[0].lower() # splices user string to first character then makes it lowercase
+    PROMPT = pyip.inputStr("Guess a letter: ")[0].lower()
+    user_guess = PROMPT # splices user string to first character then makes it lowercase
 
     """
         checks user guess and then replaces the '_' in game_word with the letter
         if the guess was correct.
     """
+    
     if len(user_guesses) != 0:
         for count, var in enumerate(user_guesses):
             if user_guess == user_guesses[count]:
-                print("You have already guessed that.")
+                print('You have already guessed that')
                 break
-    
+
     for count, var in enumerate(word):
         if user_guess == word[count]:
             game_word[count] = user_guess
